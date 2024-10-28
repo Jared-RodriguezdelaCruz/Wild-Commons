@@ -1,0 +1,228 @@
+/* General body and layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 40px;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    color: #ccc;
+}
+
+/* Main content area */
+.main-content {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+/* Main container and map layout */
+div#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+div#map {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr 200px; /* Four columns layout */
+    grid-auto-rows: auto;
+    grid-gap: 10px;
+    width: 90%;
+    height: 80vh;
+    padding: 20px;
+    border: 2px solid #ccc;
+}
+
+.logs-container, .complaints-container, .status-container {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilo para la tabla de quejas */
+.complaints-container {
+    overflow-x: auto; /* Permite el desplazamiento horizontal en pantallas pequeñas */
+}
+
+#complaintsTable {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Establece un diseño de tabla fijo */
+}
+
+#complaintsTable th, #complaintsTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+/* Anchos fijos para las columnas */
+#complaintsTable th:nth-child(1), #complaintsTable td:nth-child(1) { width: 5%; } /* ID Complaint */
+#complaintsTable th:nth-child(2), #complaintsTable td:nth-child(2) { width: 5%; } /* ID User */
+#complaintsTable th:nth-child(3), #complaintsTable td:nth-child(3) { width: 20%; } /* Resource */
+#complaintsTable th:nth-child(4), #complaintsTable td:nth-child(4) { width: 15%; } /* Date */
+#complaintsTable th:nth-child(5), #complaintsTable td:nth-child(5) { width: 40%; } /* Description */
+#complaintsTable th:nth-child(6), #complaintsTable td:nth-child(6) { width: 7%; } /* Status */
+#complaintsTable th:nth-child(7), #complaintsTable td:nth-child(7) { width: 8%; }  /* Resolved */
+
+
+/* Sala General */
+.general-room {
+    grid-column: 1 / 2; /* First column */
+    grid-row: span 11; /* Spanning multiple rows for larger height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: 2px solid #ccc;
+}
+
+
+/* Cubículos (cuarta columna) */
+.continent-cube {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e4e6e9;
+    font-size:  1.2em;
+    border: 5px solid #ffffff;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+/* Recurso común */
+.resource {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    border: 3px solid #ccc;
+    font-size: 1.2em;
+    border-radius: 10px;
+}
+
+/* Resource color variations */
+.resource.green {
+    border-color: rgb(9, 206, 9);
+}
+
+.resource.red {
+    border-color: red;
+}
+
+.resource.gray {
+    border-color: gray;
+}
+
+div.resource:hover {
+    border-color: rgb(44, 24, 221); 
+}
+
+/* Titles and buttons */
+h1.Title {
+    font-size: 2.5em;
+    color: #F20505;
+}
+
+h1.Subtitle {
+    font-size: 1.75em;
+    color: #19A3FA;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #19A3FA;
+    color: #f0f0f0;
+    margin-left: 200px;
+    padding: 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: #706f6f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #map {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .resource-card {
+        margin-bottom: 10px;
+    }
+}
